@@ -2,7 +2,10 @@
 This module provides more specific instructions for building the Ripple Detection module in Windows and fills in some important (and frustrating) gaps left in the OpenEphys wiki.
 
 ## Build GUI from source
-Head here (https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/491544/Installation). Then create the build files for the plugin and compile it. You will find detailed instruction in the Open Ephys wiki website (https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/950297/Tutorial+Add+a+custom+processor).
+Head [here](https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/491544/Installation) for instructions on how to download the OpenEphys Source code and compile it.
+
+## Build the plugin from source
+ You will find detailed instruction in the [Open Ephys wiki website](https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/950297/Tutorial+Add+a+custom+processor).
 
 ## Ripple detection algorithm
 The ripple detection algorithm works in two steps:
