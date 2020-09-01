@@ -2,7 +2,9 @@
 This module provides more specific instructions for building the Ripple Detection module in Windows and fills in some important (and frustrating) gaps left in the OpenEphys wiki.
 
 ## Build GUI from source
-Head [here](https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/491621/Windows) for instructions on how to download the OpenEphys Source code and compile it. Follow Steps 1-6 to a t. 
+Head [here](https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/491621/Windows) for instructions on how to download the OpenEphys Source code and compile it. Follow Steps 1-6 to a t.  
+- For step 7, before running first open up the CMakeList.txt file in the top-level folder in you plugin-GUI repository and comment out lines 17-19 with a #.  
+Then follow the rest of the steps to build the GUI from source.  <b> Note that the "Debug" version is super slow in Windows so you should build the "Release" version and run the open-ephys.exe file from the "Release" folder.</b>
 
 ## Build the plugin from source
  You will find detailed instruction in the [Open Ephys wiki website](https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/950297/Tutorial+Add+a+custom+processor).
