@@ -2,7 +2,7 @@
 Open Ephys plugin to detect hippocampal ripple events.
 
 ## Installation
-Create a new plugin for Open Ephys using the RippleDetector codes. In short words, you will first have to download the Open Ephys GUI source code and compile it (https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/491544/Installation). Then create the build files for the plugin and compile it. You will find detailed instruction in the Open Ephys wiki website (https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/950297/Tutorial+Add+a+custom+processor).
+Create a new plugin for Open Ephys using the RippleDetector codes. In short words, you will first have to download the Open Ephys GUI source code and compile it (https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/491544/Installation). Then create the build files for the plugin and compile it. You will find detailed instruction in the Open Ephys wiki website (https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/950297/Tutorial+Add+a+custom+processor).  Go here if installing on Windows for more detailed instructions! 
 
 ## Ripple detection algorithm
 The ripple detection algorithm works in two steps:
