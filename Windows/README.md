@@ -20,4 +20,12 @@ Go to the [Open Ephys wiki website](https://open-ephys.atlassian.net/wiki/spaces
 - 1) Don't use the ExampleProcessor but rather use the GenericProcessor in the Source/Processors folder or the PhaseDetector in the Plugins folder to start and rename the folder to match your custom plugin.  
 - 2) To add files, first copy the .cpp, .h, and OpenEphysLib.cpp files over to the Plugins directory, rename them to match you new module, then open the open the open-ephys.vcxproj folder in Visual Studio, find your plugin in the "Solution Explorer" (Ctrl+Alt+L or View->Solution Explorer) & right click on the "Solution 'open-ephys-GUI'". Then remove all header and source files in the tree, right click to add a new item, and select the newly renamed files. Make <b>SURE</b> to change the display name in the OpenEphys.lib file (e.g. "info->name = 'MyPlugin'").  
 - 5) Upon building, Visual Studio creates DLL files that sometimes, for some reason, don't end up with the right name.  You might have to manually adjust.  To do so, a) Open the Property Manager (View->Other Windows->Property Manager), b) Right click on "Release|x64" and hit "Properties".   
-![Image of Change Screen](https://github.com/diba-lab/RippleDetector/blob/master/Windows/How%20to%20get%20to%20screen%20to%20change%20plugin%20DLL%20output%20name.JPG)
+![Image of Change Screen](https://github.com/diba-lab/RippleDetector/blob/master/Windows/How%20to%20get%20to%20screen%20to%20change%20plugin%20DLL%20output%20name.JPG)  
+c) Change "Intermediate Directory" and "Target Name" to match your processor name.  
+[]()
+d) Repeat for all other configs you might like to build (but most likely you can just do the "Release|x64" and be done with it).  
+
+## Option step #2 above...
+If the above step 2 doesn't work, you can also do the following:  
+- a) Copy over the original .h, .cpp, and OpenEphys.lib files with your process name into a folder with your processor name and rename as in step 2 above.
+- b) 
