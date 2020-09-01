@@ -9,7 +9,7 @@ Then follow the rest of the steps to build the GUI from source.  <b> Note that t
 ## Build the Ripple plugin from source
  Go to the [Open Ephys wiki website](https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/950297/Tutorial+Add+a+custom+processor) for instructions on building the plugin from source and then tweak these steps as follows:  
 - 1) Copy the entire RippleDetector folder into the Plugins folder. 
-- 2) Make sure Visual Studio has the correct .cpp, .h, and OpenEphys.lib files and their correct locations for the RippleDetector (see 2 below).  
+- 2) (Create Build files) Make sure Visual Studio has the correct .cpp, .h, and OpenEphys.lib files and their correct locations for the RippleDetector (see 2 below).  
 - 5) See #5 below if you get any errors.
 
 
@@ -18,14 +18,16 @@ I know this doesn't belong here but it's the best place for it for now.
   
 Go to the [Open Ephys wiki website](https://open-ephys.atlassian.net/wiki/spaces/OEW/pages/950297/Tutorial+Add+a+custom+processor) for instructions on building the plugin from source. Do them <b>IN ORDER</b> and then tweak these steps as follows:  
 - 1) Don't use the ExampleProcessor but rather use the GenericProcessor in the Source/Processors folder or the PhaseDetector in the Plugins folder to start and rename the folder to match your custom plugin.  
-- 2) To add files, first copy the .cpp, .h, and OpenEphysLib.cpp files over to the Plugins directory, rename them to match you new module, then open the open the open-ephys.vcxproj folder in Visual Studio, find your plugin in the "Solution Explorer" (Ctrl+Alt+L or View->Solution Explorer) & right click on the "Solution 'open-ephys-GUI'". Then remove all header and source files in the tree, right click to add a new item, and select the newly renamed files. Make <b>SURE</b> to change the display name in the OpenEphys.lib file (e.g. "info->name = 'MyPlugin'").  
+- 2) (Create Build files). To add files, first copy the .cpp, .h, and OpenEphysLib.cpp files over to the Plugins directory, rename them to match you new module, then open the open the open-ephys.vcxproj folder in Visual Studio, find your plugin in the "Solution Explorer" (Ctrl+Alt+L or View->Solution Explorer) & right click on the "Solution 'open-ephys-GUI'". Then remove all header and source files in the tree, right click to add a new item, and select the newly renamed files. Make <b>SURE</b> to change the display name in the OpenEphys.lib file (e.g. "info->name = 'MyPlugin'").  
 - 5) Upon building, Visual Studio creates DLL files that sometimes, for some reason, don't end up with the right name.  You might have to manually adjust.  To do so, a) Open the Property Manager (View->Other Windows->Property Manager), b) Right click on "Release|x64" and hit "Properties".   
 ![Image of Change Screen](https://github.com/diba-lab/RippleDetector/blob/master/Windows/How%20to%20get%20to%20screen%20to%20change%20plugin%20DLL%20output%20name.JPG)  
 c) Change "Intermediate Directory" and "Target Name" to match your processor name.  
-[]()
+![How to change DLL location image](https://github.com/diba-lab/RippleDetector/blob/master/Windows/How%20to%20change%20plugin%20DLL%20output%20name%20Ripple%20Detector.JPG)
 d) Repeat for all other configs you might like to build (but most likely you can just do the "Release|x64" and be done with it).  
 
-## Option step #2 above...
+## Optional step #2 above...
 If the above step 2 doesn't work, you can also do the following:  
-- a) Copy over the original .h, .cpp, and OpenEphys.lib files with your process name into a folder with your processor name and rename as in step 2 above.
-- b) 
+- a) Copy over the original .h, .cpp, OpenEphys.lib, <b>AND CMakeLists.txt</b> files with your process name into a folder with your processor name and rename as in step 2 above in the .cpp and .h files.
+- b) Update the CMakeLists.txt file to reference the .cpp file and .h files you copied over.  
+- c) Update CMakeLists.txt in the Plugins directory with the line "add_subdirectory(MyDetector)".  
+- d) Run CMake from the top level directory.  
